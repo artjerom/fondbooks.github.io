@@ -1,0 +1,328 @@
+/*======================================
+=            Styles Project          =
+======================================*/
+
+/*==================================================
+=            Variables and import files            =
+==================================================*/
+
+$main-color = #FEBB8E
+$second-color = #9AD0C2
+$trivial-color = #252525
+
+@import "http://webfonts.ru/import/ditasweet.css";
+/*
+  Dita Sweet, 400
+*/
+@import "http://webfonts.ru/import/pancettapro.css";
+/*
+  Pancetta Pro, 400, 400 italic
+*/
+@import "http://webfonts.ru/import/clinicapro.css";
+/*
+  Clinica Pro, 400, 400 italic
+*/
+
+/*=====  End of Variables and import files  ======*/
+
+*
+  font-family "Open Sans", sans-serif
+  box-sizing border-box
+  padding 0px
+  margin 0px
+  &::selection
+    background $second-color
+    color $trivial-color
+  &::-moz-selection
+    background $second-color
+    color $trivial-color
+
+body
+  // padding 25px
+  width 100%
+  height 100%
+  background url('../images/fon2.jpg')
+  // background lighten($trivial-color, 0%)
+  background-size cover
+  background-repeat no-repeat
+  background-attachment fixed
+
+.container
+  padding 50px
+  border-radius 5px
+  box-shadow 0px 0px 3px #222
+  background-color rgba(238, 238, 238, .5)
+  min-width 750px
+  margin: 25px auto
+  overflow hidden
+  // height 935px
+  width 65%
+
+.logo
+  text-decoration none
+  color #333
+  &:hover
+    transition .3s
+    text-shadow 0px 0px 2px $trivial-color
+
+h1,h2
+  font-family "Pancetta Pro"
+  font-size 3.2em
+  width 100%
+  text-transform uppercase
+h2
+  color #333
+  font-size 1em
+
+.length
+  font-size 1.1em
+// .field-search,.button-search
+//   font-size 1em
+
+.search
+  margin -30px 5%
+  float right
+  
+.field-search
+  background-color rgba(37, 37, 37, .5)
+  color #eee
+  box-shadow 0 0 2px #222
+  border none
+  font-size 1.4em
+  padding 15px
+  border-top-left-radius 5px
+  border-top-right-radius 5px
+  &:hover
+    transition .2s
+    background-color rgba(37, 37, 37, .7)
+  &:focus
+    background-color $trivial-color
+    transition .2s
+    border-none
+    box-shadow 0 0 6px #333
+
+
+hr
+  margin 25px
+  border 1px dotted #222
+
+.books
+  padding 5px
+
+
+.info
+  margin-bottom 50px
+ul
+  display inline
+  list-style-type none
+  // margin 25px 25px
+.donate
+  font-family "Pancetta Pro"
+  // background-color rgba(238, 238, 238, .5)
+  background-color rgba(37, 37, 37, .7)
+  margin 15px 5px
+  padding 7px
+  float right
+  text-decoration none
+  font-size 1.9em
+  box-shadow 0px 0px 4px #444
+  color #eee
+  text-shadow 1px 1px 2px #111
+
+.money:hover
+  transition .3s ease-out
+  background-color rgba(37, 37, 37, .8)
+  color #eee
+  text-shadow 0px 0px 4px yellow
+
+.book
+  margin-top 5px
+  border-radius 5px
+  // float left
+  // width 50%
+  padding 10px
+  border 1px solid #333
+  background-color rgba(255, 255, 255 .6)
+  &:hover
+    transition .2s ease-out
+    background-color $trivial-color
+    box-shadow 0px 0px 4px #222
+    h3
+      color #eee
+    .ico-dowland
+      transition .4s ease-out
+      color red
+      opacity 1
+    h4
+      color #eee
+      text-shadow 0px 0px 2px yellow
+      text-decoration none
+
+#scrollTop
+  opacity: 0.8
+  color #eee
+  position fixed
+  right 40px
+  bottom 40px
+  display none
+  cursor: pointer
+
+h3
+  font-size 1.6em
+  font-family "Clinica Pro"
+  color #222
+h4
+  font-family "Dita Sweet"
+  color lighten(#222, 15%)
+  font-style italic
+  text-decoration underline
+  font-size 1.3em
+
+.ico-dowland
+  opacity .7
+  color $trivial-color
+  float right
+  margin-top -51px
+  width 65px
+  // height 65px
+
+/*============================
+=            Menu            =
+============================*/
+
+.content-menu
+  // visibility hidden
+  padding 5%
+  background-color rgba(154, 208, 194, .9)
+  margin 0px auto
+  position absolute
+  top 0%
+  width 100%
+  // overflow auto
+  min-height 100%
+  text-align center
+  .text-donate
+    margin-top 100px
+  .reply-ico
+    position relative
+    color $trivial-color
+    float left
+    &:hover
+      transition .3s
+      color $main-color
+      text-shadow 0px 0px 6px #222
+
+.contacts
+  padding 20px
+  width 40%
+  opacity .8
+  background lighten($trivial-color, 15%)
+  white-space nowrap
+  border-radius 5px
+  &:hover
+    transition .3s
+    opacity 1
+    box-shadow 0px 0px 4px $trivial-color
+    a,span
+      // color $main-color
+      &:hover
+        transition .3s
+        color darken(#eee, 5%)
+        text-shadow 0 0 2px yellow
+        // color darken($main-color, 15%)
+  a,span
+    text-decoration none
+    display block
+    text-align left
+    font-size .7em
+    margin 15px 10px
+    color #eee
+
+.purses
+  // display flex
+  margin 0px auto
+  li
+    margin-left 15px
+    float left
+    opacity .7
+    padding 5px
+    border-radius 5px
+    box-shadow 0px 0px 8px $trivial-color
+    margin-top 20px
+    &:hover
+      transition .2s
+      opacity 1
+    h2
+      // style
+      img
+        // float left
+.purse-add
+  padding 20px
+  margin 5px
+  border-radius 5px
+  background #fff
+
+
+// .contact-form
+//   // styles
+//   h2
+//     // styles
+//   input
+//     background-color $trivial-color
+//     color #eee
+//     padding 15px 25px
+
+/*=====  End of Menu  ======*/
+
+
+/*==============================
+=            Media             =
+==============================*/
+
+@media screen and (max-width 750px)
+  *
+    transition 0s
+  body
+    padding 0px
+    // background none
+  .container
+    padding 10px
+    margin 0 auto
+    width 100%
+    min-width 600px
+  .field-search
+    font-size 1.2em
+    padding 5px
+    margin 22px -10px
+  h1
+    font-size 2.4em
+  .donate
+    font-size 1.1em
+  .books
+    padding 0px
+  #scrollTop
+    visibility hidden
+  .book
+    padding 10px
+    margin 2px
+    border-radius 0px
+    &:hover
+      box-shadow none
+  .contacts
+    min-width 400px
+    opacity 1
+  .purses
+  // display flex
+    li
+      opacity 1
+/*  .ico-dowland
+    margin-top -50px*/
+
+/*=====  End of Media   ======*/
+
+/*======================================
+=            Delete section            =
+======================================*/
+
+
+

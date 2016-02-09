@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+html(lang="ru" ng-app="fondBooks")
+head
+  meta(charset="UTF-8")
+  link(rel="stylesheet", href="css/style.css")
+  script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js")
+  script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js")
+  script(src="js/all.js")
+  title fondbooks
+body
+  link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
+  link(rel="stylesheet", href="path/to/font-awesome/css/font-awesome.min.css")
+  .container(ng-controller="bookList")
+
+    #scrollTop
+      <i class="fa fa-arrow-circle-o-up fa-4x"></i>
+
+    a.logo(href="index.html")
+      h1 Fond-Books
+    h2 цифровая библиотека 
+    //- a.admin-entry(href="#") Добавить книгу
+    form.search#search
+     p.text-search
+       input.field-search(type="search" name="search" ng-model="query" placeholder="Поиск по сайту")
+
+    hr
+
+    .books
+      .info
+        ul#menu
+          //- li
+          //-   a.donate(href="#") Контакты
+          li
+           a(class="donate money" id="show" href="#") Отблагодарить автора
+
+         p.length Общее кол-во книг: {{ books.length }}
+
+        document.write(ShowFolderFileList('books/'))
+
+
+      .book(ng-repeat="books in books | filter:query")
+        h3.work {{ books.work }}
+        h4.author {{ books.author }}
+        a(href="{{ books.path }}")
+          i(class='ico-dowland fa fa-file-pdf-o fa-3x')
+
+
+  .content-menu
+    a(href="#" id="hide")
+      <i class="fa fa-reply reply-ico fa-4x"></i>
+    .text-donate
+      h1 Добро пожаловать
+      hr
+      p По ниже расположенным кошелькам вы можете отблагодарить автора <br> и  помочь развитию проекта в дальнейшем. <br> На оплату хостинга в среднем уходит 10$ в месяц. Это финансовые расходы, времени требуется тоже немало. <br> Благодаря вашей поддержке, сайт будет продолжать развитие без использования рекламы.
+      <br>
+      .contacts
+        a.txt-contacts(href="vk.com/")
+          i.ico-vk(class="fa fa-vk fa-2x")  Я Вконтакте
+        span.txt-contacts(href="gmail.com")
+          i(class="fa fa-envelope fa-2x")  artjerom@gmail.com
+      ul.purses
+        li
+          h2 Яндекс Деньги
+          iframe(frameborder="0" allowtransparency="true" scrolling="no" src="https://money.yandex.ru/embed/shop.xml?account=410012757708378&quickpay=shop&payment-type-choice=off&mobile-payment-type-choice=on&writer=buyer&targets-hint=%D0%9F%D0%B5%D1%80%D0%B5%D0%B2%D0%B5%D0%B4%D0%B8%D1%82%D0%B5+%D0%BB%D1%8E%D0%B1%D1%83%D1%8E+%D1%81%D1%83%D0%BC%D0%BC%D1%83&default-sum=50&button-text=03&successURL=" width="450" height="209")
+        li
+          h2 WebMoney
+          iframe(scrolling="no" frameborder="0" allowtransparency="true" src="//events.webmoney.ru/social/widgetDonate.aspx?type=widget&guid=f5c799ff-ce76-42c0-b092-86b4d3b571b9&h=200&w=370" style="border:0px; height:200px; width:370px;")
+        li
+          h2 Qiwi money
+          .purse-add
+            img(src="images/qiwi-logo.png", alt="" width="100px" height="50px")
+            hr
+            p +79040401350
+      //- <br>
+      //- hr
+      //- h2 Связь с автором:
+      //- form.contact-form(accept-charset="UTF-8" action="https://formkeep.com/f/4f41351f6853" method="POST")
+      //-   input.contact-name(type="name" name="utf8" placeholder="Ваше имя" required )
+      //-   input.contact-email(type="email" name="email" placeholder="Ваш email" required )
+      //-   textarea.contact-text(type="text" placeholder="Введите текст" required )
+      //-   button.contact-button(type="submit") Отправить
